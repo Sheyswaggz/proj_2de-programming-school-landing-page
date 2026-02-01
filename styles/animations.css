@@ -1,0 +1,468 @@
+/* ================================
+   Animation Keyframes & Transitions
+   ================================ */
+
+/* Smooth scroll behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+/* ================================
+   Scroll-Triggered Reveals
+   ================================ */
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in-down {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in-left {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fade-in-right {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes scale-in {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* ================================
+   Reveal Animation Classes
+   ================================ */
+
+.reveal {
+  animation: fade-in-up 0.6s ease-out;
+}
+
+.reveal-delayed {
+  animation: fade-in-up 0.6s ease-out 0.2s both;
+}
+
+.reveal-from-left {
+  animation: fade-in-left 0.6s ease-out;
+}
+
+.reveal-from-right {
+  animation: fade-in-right 0.6s ease-out;
+}
+
+.reveal-from-top {
+  animation: fade-in-down 0.6s ease-out;
+}
+
+.reveal-scale {
+  animation: scale-in 0.5s ease-out;
+}
+
+.reveal-fade {
+  animation: fade-in 0.8s ease-out;
+}
+
+/* ================================
+   Button Morphing Animations
+   ================================ */
+
+@keyframes button-pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+@keyframes button-shake {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  10%, 30%, 50%, 70%, 90% {
+    transform: translateX(-4px);
+  }
+  20%, 40%, 60%, 80% {
+    transform: translateX(4px);
+  }
+}
+
+@keyframes button-bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Button transition base */
+button,
+.btn,
+a.button {
+  transition: all 0.3s ease;
+}
+
+button:hover,
+.btn:hover,
+a.button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+button:active,
+.btn:active,
+a.button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Special button animations */
+.btn-pulse {
+  animation: button-pulse 2s ease-in-out infinite;
+}
+
+.btn-shake {
+  animation: button-shake 0.5s ease-in-out;
+}
+
+.btn-bounce {
+  animation: button-bounce 1s ease-in-out infinite;
+}
+
+/* ================================
+   Loading & Spinner Animations
+   ================================ */
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes dots-pulse {
+  0%, 20% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.3;
+  }
+}
+
+.spinner {
+  animation: spin 1s linear infinite;
+}
+
+.loading-dots span {
+  animation: dots-pulse 1.4s ease-in-out infinite;
+}
+
+.loading-dots span:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.loading-dots span:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+/* ================================
+   Slide & Slide Animations
+   ================================ */
+
+@keyframes slide-in-bottom {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-out-bottom {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(100%);
+  }
+}
+
+@keyframes slide-in-top {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+.slide-in {
+  animation: slide-in-bottom 0.4s ease-out;
+}
+
+.slide-out {
+  animation: slide-out-bottom 0.4s ease-out;
+}
+
+/* ================================
+   Gradient Animations
+   ================================ */
+
+@keyframes gradient-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.gradient-animated {
+  background-size: 200% 200%;
+  animation: gradient-shift 3s ease infinite;
+}
+
+/* ================================
+   Float & Hover Effects
+   ================================ */
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+.float-animation {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* ================================
+   Card & Component Transitions
+   ================================ */
+
+.card,
+.component {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover,
+.component:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* ================================
+   Image & Media Transitions
+   ================================ */
+
+img {
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+img:hover {
+  transform: scale(1.05);
+}
+
+/* ================================
+   Link Transitions
+   ================================ */
+
+a {
+  transition: color 0.2s ease, opacity 0.2s ease;
+}
+
+a:hover {
+  opacity: 0.8;
+}
+
+/* ================================
+   Modal & Overlay Animations
+   ================================ */
+
+@keyframes modal-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes modal-slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(50px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.modal-overlay {
+  animation: modal-fade-in 0.3s ease-out;
+}
+
+.modal-content {
+  animation: modal-slide-up 0.4s ease-out;
+}
+
+/* ================================
+   Accessibility: Reduced Motion
+   ================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  html {
+    scroll-behavior: auto;
+  }
+
+  /* Disable floating and infinite animations */
+  .float-animation,
+  .gradient-animated,
+  .btn-pulse,
+  .btn-bounce,
+  .spinner {
+    animation: none !important;
+  }
+}
+
+/* ================================
+   Focus & Interaction States
+   ================================ */
+
+:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
+  transition: outline-offset 0.2s ease;
+}
+
+/* ================================
+   Page Transitions
+   ================================ */
+
+@keyframes page-enter {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.page-transition {
+  animation: page-enter 0.5s ease-out;
+}
+
+/* ================================
+   Stagger Delays for Lists
+   ================================ */
+
+.stagger-item:nth-child(1) { animation-delay: 0.1s; }
+.stagger-item:nth-child(2) { animation-delay: 0.2s; }
+.stagger-item:nth-child(3) { animation-delay: 0.3s; }
+.stagger-item:nth-child(4) { animation-delay: 0.4s; }
+.stagger-item:nth-child(5) { animation-delay: 0.5s; }
+.stagger-item:nth-child(6) { animation-delay: 0.6s; }
+.stagger-item:nth-child(7) { animation-delay: 0.7s; }
+.stagger-item:nth-child(8) { animation-delay: 0.8s; }
+
+/* ================================
+   Utility Animation Classes
+   ================================ */
+
+.animate-fast {
+  animation-duration: 0.3s !important;
+}
+
+.animate-slow {
+  animation-duration: 1s !important;
+}
+
+.animate-delay-sm {
+  animation-delay: 0.1s;
+}
+
+.animate-delay-md {
+  animation-delay: 0.3s;
+}
+
+.animate-delay-lg {
+  animation-delay: 0.5s;
+}
+
+.animate-once {
+  animation-iteration-count: 1;
+  animation-fill-mode: both;
+}
+
+.animate-infinite {
+  animation-iteration-count: infinite;
+}

@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <!-- Character encoding MUST be first -->
+  <meta charset="UTF-8">
+
+  <!-- Viewport for responsive design -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
+  <!-- Document title with site name -->
+  <title>Programming School | Learn to Code with Expert Instructors</title>
+
+  <!-- Meta descriptions for SEO -->
+  <meta name="description" content="Master programming skills with our comprehensive courses. Learn web development, JavaScript, Python, and more from industry experts. Start your coding journey today.">
+
+  <!-- Open Graph for social media -->
+  <meta property="og:title" content="Programming School | Learn to Code with Expert Instructors">
+  <meta property="og:description" content="Master programming skills with our comprehensive courses. Learn web development, JavaScript, Python, and more from industry experts.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://programmingschool.com">
+  <meta property="og:image" content="https://programmingschool.com/images/og-image.jpg">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Programming School | Learn to Code">
+  <meta name="twitter:description" content="Master programming skills with our comprehensive courses taught by industry experts.">
+  <meta name="twitter:image" content="https://programmingschool.com/images/twitter-card.jpg">
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://programmingschool.com">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="styles/base.css">
+  <link rel="stylesheet" href="styles/components.css">
+  <link rel="stylesheet" href="styles/animations.css">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+<body>
+  <!-- Skip navigation for accessibility -->
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <!-- Header with navigation -->
+  <header role="banner">
+    <div class="container">
+      <div class="header-content">
+        <div class="logo">
+          <a href="/" aria-label="Programming School Home">
+            <span class="logo-text">Programming School</span>
+          </a>
+        </div>
+
+        <nav role="navigation" aria-label="Main navigation">
+          <ul role="list">
+            <li><a href="#hero" aria-current="page">Home</a></li>
+            <li><a href="#courses">Courses</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#testimonials">Testimonials</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main content -->
+  <main id="main" role="main">
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero-section" aria-labelledby="hero-title">
+      <div class="container">
+        <div class="hero-content">
+          <h1 id="hero-title">Transform Your Future with Code</h1>
+          <p class="hero-subtitle">Learn programming from industry experts and launch your tech career with hands-on projects and real-world experience.</p>
+          <div class="hero-actions">
+            <a href="#courses" class="btn btn-primary">Explore Courses</a>
+            <a href="#contact" class="btn btn-secondary">Get Started</a>
+          </div>
+        </div>
+        <div class="hero-image">
+          <img src="images/hero-coding.jpg" alt="Students learning to code in modern classroom" loading="eager" width="800" height="600">
+        </div>
+      </div>
+    </section>
+
+    <!-- Courses Section -->
+    <section id="courses" class="courses-section" aria-labelledby="courses-title">
+      <div class="container">
+        <header class="section-header">
+          <h2 id="courses-title">Our Courses</h2>
+          <p class="section-description">Choose from our comprehensive range of programming courses designed for all skill levels.</p>
+        </header>
+
+        <div class="courses-grid">
+          <!-- Course Card 1 -->
+          <article class="course-card">
+            <div class="course-image">
+              <img src="images/course-web-dev.jpg" alt="Web Development Course" loading="lazy" width="400" height="300">
+            </div>
+            <div class="course-content">
+              <h3>Web Development Fundamentals</h3>
+              <p class="course-description">Master HTML, CSS, and JavaScript to build modern, responsive websites from scratch.</p>
+              <div class="course-meta">
+                <span class="course-duration">12 weeks</span>
+                <span class="course-level">Beginner</span>
+              </div>
+              <a href="#contact" class="course-link">Learn More</a>
+            </div>
+          </article>
+
+          <!-- Course Card 2 -->
+          <article class="course-card">
+            <div class="course-image">
+              <img src="images/course-javascript.jpg" alt="JavaScript Course" loading="lazy" width="400" height="300">
+            </div>
+            <div class="course-content">
+              <h3>Advanced JavaScript</h3>
+              <p class="course-description">Deep dive into JavaScript concepts including ES6+, async programming, and modern frameworks.</p>
+              <div class="course-meta">
+                <span class="course-duration">10 weeks</span>
+                <span class="course-level">Intermediate</span>
+              </div>
+              <a href="#contact" class="course-link">Learn More</a>
+            </div>
+          </article>
+
+          <!-- Course Card 3 -->
+          <article class="course-card">
+            <div class="course-image">
+              <img src="images/course-python.jpg" alt="Python Programming Course" loading="lazy" width="400" height="300">
+            </div>
+            <div class="course-content">
+              <h3>Python Programming</h3>
+              <p class="course-description">Learn Python from basics to advanced topics including data analysis and web development.</p>
+              <div class="course-meta">
+                <span class="course-duration">14 weeks</span>
+                <span class="course-level">Beginner</span>
+              </div>
+              <a href="#contact" class="course-link">Learn More</a>
+            </div>
+          </article>
+
+          <!-- Course Card 4 -->
+          <article class="course-card">
+            <div class="course-image">
+              <img src="images/course-fullstack.jpg" alt="Full Stack Development Course" loading="lazy" width="400" height="300">
+            </div>
+            <div class="course-content">
+              <h3>Full Stack Development</h3>
+              <p class="course-description">Become a full stack developer with expertise in frontend, backend, and database technologies.</p>
+              <div class="course-meta">
+                <span class="course-duration">24 weeks</span>
+                <span class="course-level">Advanced</span>
+              </div>
+              <a href="#contact" class="course-link">Learn More</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section" aria-labelledby="about-title">
+      <div class="container">
+        <div class="about-content">
+          <div class="about-text">
+            <header>
+              <h2 id="about-title">About Our School</h2>
+            </header>
+            <p>We are a leading programming education provider dedicated to empowering individuals with the skills needed to succeed in the tech industry. Our mission is to make quality programming education accessible to everyone.</p>
+            <p>With over 10 years of experience and more than 5,000 successful graduates, we've helped countless students transform their careers through comprehensive, hands-on programming courses taught by industry professionals.</p>
+
+            <div class="about-stats">
+              <div class="stat-item">
+                <span class="stat-number">5000+</span>
+                <span class="stat-label">Graduates</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-number">98%</span>
+                <span class="stat-label">Success Rate</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-number">50+</span>
+                <span class="stat-label">Expert Instructors</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="about-image">
+            <img src="images/about-classroom.jpg" alt="Programming school classroom with students and instructor" loading="lazy" width="600" height="450">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials-section" aria-labelledby="testimonials-title">
+      <div class="container">
+        <header class="section-header">
+          <h2 id="testimonials-title">What Our Students Say</h2>
+          <p class="section-description">Read success stories from our graduates who transformed their careers.</p>
+        </header>
+
+        <div class="testimonials-grid">
+          <!-- Testimonial 1 -->
+          <article class="testimonial-card">
+            <div class="testimonial-content">
+              <blockquote>
+                <p>"The Web Development course was incredible! The instructors were knowledgeable and supportive. I landed my first developer job just two months after graduating."</p>
+              </blockquote>
+              <footer class="testimonial-author">
+                <img src="images/avatar-sarah.jpg" alt="Sarah Johnson" loading="lazy" width="60" height="60">
+                <div class="author-info">
+                  <cite class="author-name">Sarah Johnson</cite>
+                  <span class="author-role">Frontend Developer at TechCorp</span>
+                </div>
+              </footer>
+            </div>
+          </article>
+
+          <!-- Testimonial 2 -->
+          <article class="testimonial-card">
+            <div class="testimonial-content">
+              <blockquote>
+                <p>"I came in with no coding experience and left with the confidence to build full-stack applications. The hands-on projects made all the difference."</p>
+              </blockquote>
+              <footer class="testimonial-author">
+                <img src="images/avatar-michael.jpg" alt="Michael Chen" loading="lazy" width="60" height="60">
+                <div class="author-info">
+                  <cite class="author-name">Michael Chen</cite>
+                  <span class="author-role">Full Stack Developer at StartupHub</span>
+                </div>
+              </footer>
+            </div>
+          </article>
+
+          <!-- Testimonial 3 -->
+          <article class="testimonial-card">
+            <div class="testimonial-content">
+              <blockquote>
+                <p>"Best investment I've ever made in my career. The Python course opened up so many opportunities in data science and automation."</p>
+              </blockquote>
+              <footer class="testimonial-author">
+                <img src="images/avatar-emily.jpg" alt="Emily Rodriguez" loading="lazy" width="60" height="60">
+                <div class="author-info">
+                  <cite class="author-name">Emily Rodriguez</cite>
+                  <span class="author-role">Data Analyst at DataFlow</span>
+                </div>
+              </footer>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section" aria-labelledby="contact-title">
+      <div class="container">
+        <header class="section-header">
+          <h2 id="contact-title">Get in Touch</h2>
+          <p class="section-description">Ready to start your programming journey? Contact us today or fill out the form below.</p>
+        </header>
+
+        <div class="contact-content">
+          <div class="contact-info">
+            <div class="contact-item">
+              <h3>Address</h3>
+              <p>123 Tech Street<br>San Francisco, CA 94105<br>United States</p>
+            </div>
+
+            <div class="contact-item">
+              <h3>Email</h3>
+              <p><a href="mailto:info@programmingschool.com">info@programmingschool.com</a></p>
+            </div>
+
+            <div class="contact-item">
+              <h3>Phone</h3>
+              <p><a href="tel:+14155551234">+1 (415) 555-1234</a></p>
+            </div>
+
+            <div class="contact-item">
+              <h3>Hours</h3>
+              <p>Monday - Friday: 9:00 AM - 6:00 PM<br>Saturday: 10:00 AM - 4:00 PM<br>Sunday: Closed</p>
+            </div>
+          </div>
+
+          <div class="contact-form">
+            <form method="POST" action="/submit-inquiry" novalidate>
+              <fieldset>
+                <legend class="sr-only">Contact Form</legend>
+
+                <div class="form-group">
+                  <label for="name">Full Name <span aria-label="required">*</span></label>
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    required
+                    aria-required="true"
+                    autocomplete="name"
+                  >
+                </div>
+
+                <div class="form-group">
+                  <label for="email">Email Address <span aria-label="required">*</span></label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    required
+                    aria-required="true"
+                    autocomplete="email"
+                  >
+                </div>
+
+                <div class="form-group">
+                  <label for="phone">Phone Number</label>
+                  <input
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    autocomplete="tel"
+                  >
+                </div>
+
+                <div class="form-group">
+                  <label for="course">Course of Interest</label>
+                  <select id="course" name="course">
+                    <option value="">Select a course</option>
+                    <option value="web-dev">Web Development Fundamentals</option>
+                    <option value="javascript">Advanced JavaScript</option>
+                    <option value="python">Python Programming</option>
+                    <option value="fullstack">Full Stack Development</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label for="message">Message <span aria-label="required">*</span></label>
+                  <textarea
+                    id="message"
+                    name="message"
+                    rows="5"
+                    required
+                    aria-required="true"
+                  ></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Send Message</button>
+              </fieldset>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer role="contentinfo">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>Programming School</h3>
+          <p>Empowering the next generation of developers through quality education and hands-on learning.</p>
+        </div>
+
+        <div class="footer-section">
+          <h3>Quick Links</h3>
+          <ul role="list">
+            <li><a href="#courses">Courses</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#testimonials">Testimonials</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <h3>Resources</h3>
+          <ul role="list">
+            <li><a href="/blog">Blog</a></li>
+            <li><a href="/faq">FAQ</a></li>
+            <li><a href="/careers">Careers</a></li>
+            <li><a href="/support">Support</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <h3>Connect</h3>
+          <ul role="list" class="social-links">
+            <li><a href="https://twitter.com/programmingschool" aria-label="Follow us on Twitter" rel="noopener noreferrer" target="_blank">Twitter</a></li>
+            <li><a href="https://linkedin.com/company/programmingschool" aria-label="Connect on LinkedIn" rel="noopener noreferrer" target="_blank">LinkedIn</a></li>
+            <li><a href="https://github.com/programmingschool" aria-label="View our GitHub" rel="noopener noreferrer" target="_blank">GitHub</a></li>
+            <li><a href="https://facebook.com/programmingschool" aria-label="Like us on Facebook" rel="noopener noreferrer" target="_blank">Facebook</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 Programming School. All rights reserved.</p>
+        <div class="footer-legal">
+          <a href="/privacy">Privacy Policy</a>
+          <a href="/terms">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/interactions.js" defer></script>
+  <script src="js/animations.js" defer></script>
+  <script src="js/analytics.js" defer></script>
+</body>
+</html>

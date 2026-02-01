@@ -1,0 +1,12 @@
+# robots.txt for Programming School Landing Page
+# Allow all search engine crawlers to access the site
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://programmingschool.com/sitemap.xml
+
+# Crawl-delay (optional, helps manage server load)
+# Uncomment if needed:
+# Crawl-delay: 1

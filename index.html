@@ -12,6 +12,8 @@
 
   <!-- Meta descriptions for SEO -->
   <meta name="description" content="Master programming skills with our comprehensive courses. Learn web development, JavaScript, Python, and more from industry experts. Start your coding journey today.">
+  <meta name="keywords" content="programming courses, coding bootcamp, web development, JavaScript, Python, online learning, tech education">
+  <meta name="author" content="Programming School">
 
   <!-- Open Graph for social media -->
   <meta property="og:title" content="Programming School | Learn to Code with Expert Instructors">
@@ -19,15 +21,28 @@
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://programmingschool.com">
   <meta property="og:image" content="https://programmingschool.com/images/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Programming School - Learn to Code">
+  <meta property="og:site_name" content="Programming School">
+  <meta property="og:locale" content="en_US">
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@programmingschool">
   <meta name="twitter:title" content="Programming School | Learn to Code">
   <meta name="twitter:description" content="Master programming skills with our comprehensive courses taught by industry experts.">
   <meta name="twitter:image" content="https://programmingschool.com/images/twitter-card.jpg">
+  <meta name="twitter:image:alt" content="Programming School - Learn to Code">
 
   <!-- Canonical URL -->
   <link rel="canonical" href="https://programmingschool.com">
+
+  <!-- Resource hints for performance -->
+  <link rel="preconnect" href="https://www.google-analytics.com" crossorigin>
+  <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
+  <link rel="dns-prefetch" href="https://www.google-analytics.com">
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com">
 
   <!-- Stylesheets -->
   <link rel="stylesheet" href="styles/base.css">
@@ -36,6 +51,216 @@
 
   <!-- Favicon -->
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+  <!-- Structured Data - Organization Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "EducationalOrganization",
+    "name": "Programming School",
+    "description": "Leading programming education provider dedicated to empowering individuals with the skills needed to succeed in the tech industry.",
+    "url": "https://programmingschool.com",
+    "logo": "https://programmingschool.com/images/logo.png",
+    "image": "https://programmingschool.com/images/og-image.jpg",
+    "telephone": "+1-415-555-1234",
+    "email": "info@programmingschool.com",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "123 Tech Street",
+      "addressLocality": "San Francisco",
+      "addressRegion": "CA",
+      "postalCode": "94105",
+      "addressCountry": "US"
+    },
+    "sameAs": [
+      "https://twitter.com/programmingschool",
+      "https://linkedin.com/company/programmingschool",
+      "https://facebook.com/programmingschool",
+      "https://instagram.com/programmingschool",
+      "https://github.com/programmingschool"
+    ],
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "bestRating": "5",
+      "worstRating": "1",
+      "ratingCount": "5000"
+    },
+    "foundingDate": "2016",
+    "numberOfEmployees": {
+      "@type": "QuantitativeValue",
+      "value": "50"
+    }
+  }
+  </script>
+
+  <!-- Structured Data - Course Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "itemListElement": [
+      {
+        "@type": "Course",
+        "name": "Web Development Fundamentals",
+        "description": "Master HTML, CSS, and JavaScript to build modern, responsive websites from scratch.",
+        "provider": {
+          "@type": "EducationalOrganization",
+          "name": "Programming School",
+          "url": "https://programmingschool.com"
+        },
+        "courseCode": "WEB-101",
+        "hasCourseInstance": {
+          "@type": "CourseInstance",
+          "courseMode": "blended",
+          "duration": "P12W"
+        },
+        "educationalLevel": "Beginner",
+        "about": [
+          "HTML5 Semantic Markup",
+          "CSS3 & Responsive Design",
+          "JavaScript Fundamentals",
+          "DOM Manipulation",
+          "Web Accessibility"
+        ]
+      },
+      {
+        "@type": "Course",
+        "name": "Advanced JavaScript",
+        "description": "Deep dive into JavaScript concepts including ES6+, async programming, and modern frameworks.",
+        "provider": {
+          "@type": "EducationalOrganization",
+          "name": "Programming School",
+          "url": "https://programmingschool.com"
+        },
+        "courseCode": "JS-201",
+        "hasCourseInstance": {
+          "@type": "CourseInstance",
+          "courseMode": "blended",
+          "duration": "P10W"
+        },
+        "educationalLevel": "Intermediate",
+        "about": [
+          "ES6+ Features",
+          "Async/Await & Promises",
+          "React & Vue.js",
+          "State Management",
+          "Testing & Debugging"
+        ]
+      },
+      {
+        "@type": "Course",
+        "name": "Python Programming",
+        "description": "Learn Python from basics to advanced topics including data analysis and web development.",
+        "provider": {
+          "@type": "EducationalOrganization",
+          "name": "Programming School",
+          "url": "https://programmingschool.com"
+        },
+        "courseCode": "PY-101",
+        "hasCourseInstance": {
+          "@type": "CourseInstance",
+          "courseMode": "blended",
+          "duration": "P14W"
+        },
+        "educationalLevel": "Beginner",
+        "about": [
+          "Python Syntax & Basics",
+          "Data Structures",
+          "Object-Oriented Programming",
+          "Data Analysis with Pandas",
+          "Django Web Framework"
+        ]
+      },
+      {
+        "@type": "Course",
+        "name": "Full Stack Development",
+        "description": "Become a full stack developer with expertise in frontend, backend, and database technologies.",
+        "provider": {
+          "@type": "EducationalOrganization",
+          "name": "Programming School",
+          "url": "https://programmingschool.com"
+        },
+        "courseCode": "FS-301",
+        "hasCourseInstance": {
+          "@type": "CourseInstance",
+          "courseMode": "blended",
+          "duration": "P24W"
+        },
+        "educationalLevel": "Advanced",
+        "about": [
+          "Frontend Frameworks",
+          "Node.js & Express",
+          "Database Design (SQL/NoSQL)",
+          "RESTful APIs & GraphQL",
+          "DevOps & Deployment"
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <!-- Structured Data - FAQ Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What programming languages do you teach?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "We teach a comprehensive range of programming languages including JavaScript, Python, HTML/CSS, TypeScript, and frameworks like React, Vue.js, Angular, Node.js, and Django."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How long are the courses?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Our courses range from 10 to 24 weeks depending on the program. Web Development Fundamentals is 12 weeks, Advanced JavaScript is 10 weeks, Python Programming is 14 weeks, and Full Stack Development is 24 weeks."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the job placement rate?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "We have a 95% job placement rate for our graduates. Our students have gone on to work at top companies including Google, Microsoft, Amazon, Meta, and many other leading tech companies."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do I need prior programming experience?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No prior experience is required for our beginner courses like Web Development Fundamentals and Python Programming. We offer courses for all skill levels from complete beginners to advanced developers."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the class format?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Our courses use a blended learning approach combining online instruction, hands-on projects, and real-world applications. You'll learn from industry experts and build a portfolio of projects."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'GA_MEASUREMENT_ID', {
+      'anonymize_ip': true,
+      'cookie_flags': 'SameSite=None;Secure'
+    });
+  </script>
 </head>
 <body>
   <!-- Skip navigation for accessibility -->

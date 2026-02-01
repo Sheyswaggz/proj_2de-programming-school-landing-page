@@ -108,6 +108,90 @@ html {
 }
 
 /* ================================
+   Kinetic Typography Animations
+   ================================ */
+
+@keyframes letter-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(20px) rotateX(-90deg);
+    filter: blur(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) rotateX(0deg);
+    filter: blur(0);
+  }
+}
+
+@keyframes word-slide-in {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes text-shimmer {
+  0% {
+    background-position: -100% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+/* Kinetic typography utility classes */
+.kinetic-text {
+  display: inline-block;
+  perspective: 1000px;
+}
+
+.kinetic-text .letter {
+  display: inline-block;
+  animation: letter-reveal 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+  transform-origin: bottom center;
+}
+
+.kinetic-text .letter:nth-child(1) { animation-delay: 0.05s; }
+.kinetic-text .letter:nth-child(2) { animation-delay: 0.1s; }
+.kinetic-text .letter:nth-child(3) { animation-delay: 0.15s; }
+.kinetic-text .letter:nth-child(4) { animation-delay: 0.2s; }
+.kinetic-text .letter:nth-child(5) { animation-delay: 0.25s; }
+.kinetic-text .letter:nth-child(6) { animation-delay: 0.3s; }
+.kinetic-text .letter:nth-child(7) { animation-delay: 0.35s; }
+.kinetic-text .letter:nth-child(8) { animation-delay: 0.4s; }
+.kinetic-text .letter:nth-child(9) { animation-delay: 0.45s; }
+.kinetic-text .letter:nth-child(10) { animation-delay: 0.5s; }
+.kinetic-text .letter:nth-child(11) { animation-delay: 0.55s; }
+.kinetic-text .letter:nth-child(12) { animation-delay: 0.6s; }
+.kinetic-text .letter:nth-child(13) { animation-delay: 0.65s; }
+.kinetic-text .letter:nth-child(14) { animation-delay: 0.7s; }
+.kinetic-text .letter:nth-child(15) { animation-delay: 0.75s; }
+.kinetic-text .letter:nth-child(16) { animation-delay: 0.8s; }
+.kinetic-text .letter:nth-child(17) { animation-delay: 0.85s; }
+.kinetic-text .letter:nth-child(18) { animation-delay: 0.9s; }
+.kinetic-text .letter:nth-child(19) { animation-delay: 0.95s; }
+.kinetic-text .letter:nth-child(20) { animation-delay: 1s; }
+
+.text-shimmer {
+  background: linear-gradient(
+    90deg,
+    currentColor 0%,
+    rgba(255, 255, 255, 0.8) 50%,
+    currentColor 100%
+  );
+  background-size: 200% 100%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: text-shimmer 3s linear infinite;
+}
+
+/* ================================
    Button Morphing Animations
    ================================ */
 
@@ -141,11 +225,44 @@ html {
   }
 }
 
+@keyframes button-morph {
+  0% {
+    border-radius: 8px;
+  }
+  50% {
+    border-radius: 24px;
+    transform: scale(1.05);
+  }
+  100% {
+    border-radius: 8px;
+  }
+}
+
+@keyframes button-glow {
+  0%, 100% {
+    box-shadow: 0 0 5px rgba(59, 130, 246, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.8), 0 0 40px rgba(59, 130, 246, 0.4);
+  }
+}
+
+@keyframes button-shimmer {
+  0% {
+    background-position: -200% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+}
+
 /* Button transition base */
 button,
 .btn,
 a.button {
   transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
 }
 
 button:hover,
@@ -173,6 +290,31 @@ a.button:active {
 
 .btn-bounce {
   animation: button-bounce 1s ease-in-out infinite;
+}
+
+.btn-morph {
+  animation: button-morph 3s ease-in-out infinite;
+}
+
+.btn-glow {
+  animation: button-glow 2s ease-in-out infinite;
+}
+
+.btn-shimmer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.3) 50%,
+    transparent 100%
+  );
+  background-size: 200% 100%;
+  animation: button-shimmer 2s linear infinite;
 }
 
 /* ================================
@@ -271,9 +413,87 @@ a.button:active {
   }
 }
 
+@keyframes gradient-rotate {
+  0% {
+    transform: rotate(0deg) scale(1);
+  }
+  50% {
+    transform: rotate(180deg) scale(1.1);
+  }
+  100% {
+    transform: rotate(360deg) scale(1);
+  }
+}
+
+@keyframes blob-morph {
+  0%, 100% {
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+  }
+  25% {
+    border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
+  }
+  50% {
+    border-radius: 50% 60% 30% 60% / 30% 60% 70% 40%;
+  }
+  75% {
+    border-radius: 60% 40% 60% 50% / 60% 50% 40% 50%;
+  }
+}
+
+@keyframes blob-float {
+  0%, 100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  25% {
+    transform: translate(30px, -30px) rotate(90deg);
+  }
+  50% {
+    transform: translate(0, -60px) rotate(180deg);
+  }
+  75% {
+    transform: translate(-30px, -30px) rotate(270deg);
+  }
+}
+
+@keyframes blob-drift {
+  0%, 100% {
+    transform: translateX(0) translateY(0);
+  }
+  50% {
+    transform: translateX(50px) translateY(-50px);
+  }
+}
+
 .gradient-animated {
   background-size: 200% 200%;
   animation: gradient-shift 3s ease infinite;
+}
+
+.gradient-blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(40px);
+  opacity: 0.7;
+  animation: blob-morph 8s ease-in-out infinite, blob-float 12s ease-in-out infinite;
+}
+
+.gradient-blob-1 {
+  animation-delay: 0s;
+  animation-duration: 8s, 12s;
+}
+
+.gradient-blob-2 {
+  animation-delay: 2s;
+  animation-duration: 10s, 14s;
+}
+
+.gradient-blob-3 {
+  animation-delay: 4s;
+  animation-duration: 12s, 16s;
+}
+
+.gradient-rotate {
+  animation: gradient-rotate 20s linear infinite;
 }
 
 /* ================================
@@ -385,10 +605,30 @@ a:hover {
   /* Disable floating and infinite animations */
   .float-animation,
   .gradient-animated,
+  .gradient-blob,
+  .gradient-rotate,
   .btn-pulse,
   .btn-bounce,
+  .btn-morph,
+  .btn-glow,
+  .btn-shimmer::before,
+  .text-shimmer,
+  .kinetic-text .letter,
   .spinner {
     animation: none !important;
+  }
+
+  /* Reset kinetic text to be immediately visible */
+  .kinetic-text .letter {
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
+  }
+
+  /* Remove shimmer backgrounds for reduced motion */
+  .text-shimmer {
+    background: none !important;
+    -webkit-text-fill-color: inherit !important;
   }
 }
 

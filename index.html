@@ -98,68 +98,152 @@
           <p class="section-description">Choose from our comprehensive range of programming courses designed for all skill levels.</p>
         </header>
 
-        <div class="courses-grid">
+        <div class="courses-grid" data-reveal>
           <!-- Course Card 1 -->
-          <article class="course-card">
+          <article class="course-card" data-course-card>
             <div class="course-image">
               <img src="images/course-web-dev.jpg" alt="Web Development Course" loading="lazy" width="400" height="300">
             </div>
             <div class="course-content">
-              <h3>Web Development Fundamentals</h3>
+              <h3 class="course-title">Web Development Fundamentals</h3>
               <p class="course-description">Master HTML, CSS, and JavaScript to build modern, responsive websites from scratch.</p>
               <div class="course-meta">
-                <span class="course-duration">12 weeks</span>
-                <span class="course-level">Beginner</span>
+                <span class="course-duration" aria-label="Duration">
+                  <span class="meta-icon" aria-hidden="true">⏱</span>
+                  12 weeks
+                </span>
+                <span class="course-level course-level-beginner" aria-label="Difficulty level">
+                  <span class="meta-icon" aria-hidden="true">📊</span>
+                  Beginner
+                </span>
               </div>
-              <a href="#contact" class="course-link">Learn More</a>
+              <div class="course-topics" aria-label="Topics covered">
+                <h4 class="topics-heading">Topics Covered:</h4>
+                <ul class="topics-list" role="list">
+                  <li>HTML5 Semantic Markup</li>
+                  <li>CSS3 & Responsive Design</li>
+                  <li>JavaScript Fundamentals</li>
+                  <li>DOM Manipulation</li>
+                  <li>Web Accessibility</li>
+                </ul>
+              </div>
+              <a href="#contact" class="btn btn-primary course-cta" aria-label="Enroll in Web Development Fundamentals">Enroll Now</a>
             </div>
           </article>
 
           <!-- Course Card 2 -->
-          <article class="course-card">
+          <article class="course-card" data-course-card>
             <div class="course-image">
               <img src="images/course-javascript.jpg" alt="JavaScript Course" loading="lazy" width="400" height="300">
             </div>
             <div class="course-content">
-              <h3>Advanced JavaScript</h3>
+              <h3 class="course-title">Advanced JavaScript</h3>
               <p class="course-description">Deep dive into JavaScript concepts including ES6+, async programming, and modern frameworks.</p>
               <div class="course-meta">
-                <span class="course-duration">10 weeks</span>
-                <span class="course-level">Intermediate</span>
+                <span class="course-duration" aria-label="Duration">
+                  <span class="meta-icon" aria-hidden="true">⏱</span>
+                  10 weeks
+                </span>
+                <span class="course-level course-level-intermediate" aria-label="Difficulty level">
+                  <span class="meta-icon" aria-hidden="true">📊</span>
+                  Intermediate
+                </span>
               </div>
-              <a href="#contact" class="course-link">Learn More</a>
+              <div class="course-topics" aria-label="Topics covered">
+                <h4 class="topics-heading">Topics Covered:</h4>
+                <ul class="topics-list" role="list">
+                  <li>ES6+ Features</li>
+                  <li>Async/Await & Promises</li>
+                  <li>React & Vue.js</li>
+                  <li>State Management</li>
+                  <li>Testing & Debugging</li>
+                </ul>
+              </div>
+              <a href="#contact" class="btn btn-primary course-cta" aria-label="Enroll in Advanced JavaScript">Enroll Now</a>
             </div>
           </article>
 
           <!-- Course Card 3 -->
-          <article class="course-card">
+          <article class="course-card" data-course-card>
             <div class="course-image">
               <img src="images/course-python.jpg" alt="Python Programming Course" loading="lazy" width="400" height="300">
             </div>
             <div class="course-content">
-              <h3>Python Programming</h3>
+              <h3 class="course-title">Python Programming</h3>
               <p class="course-description">Learn Python from basics to advanced topics including data analysis and web development.</p>
               <div class="course-meta">
-                <span class="course-duration">14 weeks</span>
-                <span class="course-level">Beginner</span>
+                <span class="course-duration" aria-label="Duration">
+                  <span class="meta-icon" aria-hidden="true">⏱</span>
+                  14 weeks
+                </span>
+                <span class="course-level course-level-beginner" aria-label="Difficulty level">
+                  <span class="meta-icon" aria-hidden="true">📊</span>
+                  Beginner
+                </span>
               </div>
-              <a href="#contact" class="course-link">Learn More</a>
+              <div class="course-topics" aria-label="Topics covered">
+                <h4 class="topics-heading">Topics Covered:</h4>
+                <ul class="topics-list" role="list">
+                  <li>Python Syntax & Basics</li>
+                  <li>Data Structures</li>
+                  <li>Object-Oriented Programming</li>
+                  <li>Data Analysis with Pandas</li>
+                  <li>Django Web Framework</li>
+                </ul>
+              </div>
+              <a href="#contact" class="btn btn-primary course-cta" aria-label="Enroll in Python Programming">Enroll Now</a>
             </div>
           </article>
 
           <!-- Course Card 4 -->
-          <article class="course-card">
+          <article class="course-card" data-course-card>
             <div class="course-image">
               <img src="images/course-fullstack.jpg" alt="Full Stack Development Course" loading="lazy" width="400" height="300">
             </div>
             <div class="course-content">
-              <h3>Full Stack Development</h3>
+              <h3 class="course-title">Full Stack Development</h3>
               <p class="course-description">Become a full stack developer with expertise in frontend, backend, and database technologies.</p>
               <div class="course-meta">
-                <span class="course-duration">24 weeks</span>
-                <span class="course-level">Advanced</span>
+                <span class="course-duration" aria-label="Duration">
+                  <span class="meta-icon" aria-hidden="true">⏱</span>
+                  24 weeks
+                </span>
+                <span class="course-level course-level-advanced" aria-label="Difficulty level">
+                  <span class="meta-icon" aria-hidden="true">📊</span>
+                  Advanced
+                </span>
               </div>
-              <a href="#contact" class="course-link">Learn More</a>
+              <div class="course-topics" aria-label="Topics covered">
+                <h4 class="topics-heading">Topics Covered:</h4>
+                <ul class="topics-list" role="list">
+                  <li>Frontend Frameworks</li>
+                  <li>Node.js & Express</li>
+                  <li>Database Design (SQL/NoSQL)</li>
+                  <li>RESTful APIs & GraphQL</li>
+                  <li>DevOps & Deployment</li>
+                </ul>
+              </div>
+              <a href="#contact" class="btn btn-primary course-cta" aria-label="Enroll in Full Stack Development">Enroll Now</a>
+            </div>
+          </article>
+
+          <!-- Skeleton Loading States (Hidden by default, shown during loading) -->
+          <article class="course-card course-skeleton" aria-hidden="true" style="display: none;">
+            <div class="skeleton-image"></div>
+            <div class="course-content">
+              <div class="skeleton-title"></div>
+              <div class="skeleton-text"></div>
+              <div class="skeleton-text"></div>
+              <div class="course-meta">
+                <div class="skeleton-badge"></div>
+                <div class="skeleton-badge"></div>
+              </div>
+              <div class="skeleton-topics">
+                <div class="skeleton-text-short"></div>
+                <div class="skeleton-text-short"></div>
+                <div class="skeleton-text-short"></div>
+              </div>
+              <div class="skeleton-button"></div>
             </div>
           </article>
         </div>

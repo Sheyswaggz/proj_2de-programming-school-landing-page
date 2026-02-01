@@ -206,12 +206,18 @@ nav[role="navigation"] a[aria-current="page"] {
   overflow: hidden;
   transition: all var(--transition-base);
   box-shadow: var(--shadow-sm);
+  min-height: 400px;
 }
 
 .course-card:hover {
   transform: translateY(-4px);
   box-shadow: var(--shadow-lg);
   border-color: var(--color-primary-300);
+}
+
+.course-card:focus-within {
+  outline: 2px solid var(--color-primary-500);
+  outline-offset: 2px;
 }
 
 .course-image {
@@ -300,6 +306,140 @@ nav[role="navigation"] a[aria-current="page"] {
 
 .course-link:hover::after {
   transform: translateX(4px);
+}
+
+/* Mobile-optimized touch targets for course cards */
+@media (max-width: 767px) {
+  .course-link {
+    padding: var(--space-sm) 0;
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+  }
+
+  .course-meta {
+    gap: var(--space-sm);
+  }
+
+  .course-duration,
+  .course-level {
+    min-height: 32px;
+    padding: var(--space-xs) var(--space-md);
+  }
+}
+
+/* ==========================================================================
+   Skeleton Loading States
+   ========================================================================== */
+
+/* Skeleton shimmer animation */
+@keyframes skeleton-shimmer {
+  0% {
+    background-position: -468px 0;
+  }
+  100% {
+    background-position: 468px 0;
+  }
+}
+
+/* Skeleton base styles */
+.skeleton {
+  animation: skeleton-shimmer 1.2s ease-in-out infinite;
+  background: linear-gradient(
+    90deg,
+    var(--color-neutral-100) 0px,
+    var(--color-neutral-200) 40px,
+    var(--color-neutral-100) 80px
+  );
+  background-size: 468px 100%;
+  border-radius: var(--radius-sm);
+}
+
+@media (prefers-color-scheme: dark) {
+  .skeleton {
+    background: linear-gradient(
+      90deg,
+      var(--color-neutral-800) 0px,
+      var(--color-neutral-700) 40px,
+      var(--color-neutral-800) 80px
+    );
+    background-size: 468px 100%;
+  }
+}
+
+/* Skeleton course card */
+.course-card.skeleton-card {
+  pointer-events: none;
+  user-select: none;
+}
+
+.course-card.skeleton-card .course-image {
+  background: var(--color-neutral-100);
+  animation: skeleton-shimmer 1.2s ease-in-out infinite;
+  background: linear-gradient(
+    90deg,
+    var(--color-neutral-100) 0px,
+    var(--color-neutral-200) 40px,
+    var(--color-neutral-100) 80px
+  );
+  background-size: 468px 100%;
+}
+
+@media (prefers-color-scheme: dark) {
+  .course-card.skeleton-card .course-image {
+    background: linear-gradient(
+      90deg,
+      var(--color-neutral-800) 0px,
+      var(--color-neutral-700) 40px,
+      var(--color-neutral-800) 80px
+    );
+    background-size: 468px 100%;
+  }
+}
+
+.skeleton-title {
+  height: 28px;
+  width: 80%;
+  margin-bottom: var(--space-sm);
+}
+
+.skeleton-description {
+  height: 16px;
+  width: 100%;
+  margin-bottom: var(--space-xs);
+}
+
+.skeleton-description:last-of-type {
+  width: 60%;
+  margin-bottom: var(--space-md);
+}
+
+.skeleton-badge {
+  display: inline-block;
+  height: 24px;
+  width: 80px;
+  border-radius: var(--radius-full);
+}
+
+.skeleton-link {
+  height: 20px;
+  width: 100px;
+}
+
+/* Reduce animation for users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .skeleton,
+  .course-card.skeleton-card .course-image {
+    animation: none;
+    background: var(--color-neutral-200);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .skeleton,
+    .course-card.skeleton-card .course-image {
+      background: var(--color-neutral-700);
+    }
+  }
 }
 
 /* Testimonial Cards */

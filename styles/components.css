@@ -523,6 +523,177 @@ nav[role="navigation"] a[aria-current="page"] {
 }
 
 /* ==========================================================================
+   Social Proof Section Components
+   ========================================================================== */
+
+/* Social Proof Section */
+.social-proof-section {
+  background-color: var(--color-background);
+  position: relative;
+}
+
+/* Statistics Grid */
+.statistics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(200px, 100%), 1fr));
+  gap: var(--space-xl);
+  margin-top: var(--space-xl);
+  margin-bottom: var(--space-2xl);
+}
+
+.statistic-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: var(--space-lg);
+  background-color: var(--color-surface);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border);
+  transition: all var(--transition-base);
+}
+
+.statistic-item:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--color-primary-300);
+}
+
+.statistic-number {
+  font-size: var(--font-size-5xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-primary-600);
+  line-height: 1;
+  margin-bottom: var(--space-sm);
+}
+
+.statistic-label {
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-secondary);
+}
+
+/* Trust Badges */
+.trust-badges {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--space-xl);
+  flex-wrap: wrap;
+  margin-top: var(--space-2xl);
+  padding: var(--space-xl) 0;
+}
+
+.trust-badge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: var(--space-md);
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  transition: all var(--transition-base);
+  min-width: 120px;
+}
+
+.trust-badge:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-sm);
+}
+
+.trust-badge-icon {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-primary-50);
+  border-radius: var(--radius-full);
+  color: var(--color-primary-600);
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-bold);
+}
+
+@media (prefers-color-scheme: dark) {
+  .trust-badge-icon {
+    background-color: var(--color-neutral-800);
+    color: var(--color-primary-400);
+  }
+}
+
+.trust-badge-text {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-secondary);
+  text-align: center;
+}
+
+/* Logo Cloud */
+.logo-cloud {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--space-2xl);
+  flex-wrap: wrap;
+  margin-top: var(--space-2xl);
+  padding: var(--space-2xl) 0;
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.logo-cloud-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-md);
+  opacity: 0.6;
+  transition: opacity var(--transition-base);
+  filter: grayscale(100%);
+}
+
+.logo-cloud-item:hover {
+  opacity: 1;
+  filter: grayscale(0%);
+}
+
+.logo-cloud-item img {
+  max-width: 120px;
+  max-height: 48px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
+
+@media (max-width: 767px) {
+  .logo-cloud {
+    gap: var(--space-lg);
+  }
+
+  .logo-cloud-item img {
+    max-width: 100px;
+    max-height: 40px;
+  }
+
+  .statistics-grid {
+    grid-template-columns: repeat(auto-fit, minmax(min(150px, 100%), 1fr));
+    gap: var(--space-md);
+  }
+
+  .statistic-number {
+    font-size: var(--font-size-4xl);
+  }
+
+  .trust-badges {
+    gap: var(--space-md);
+  }
+
+  .trust-badge {
+    min-width: 100px;
+  }
+}
+
+/* ==========================================================================
    Form Components
    ========================================================================== */
 

@@ -526,90 +526,226 @@
         </header>
 
         <div class="contact-content">
-          <div class="contact-info">
-            <div class="contact-item">
-              <h3>Address</h3>
-              <p>123 Tech Street<br>San Francisco, CA 94105<br>United States</p>
-            </div>
+          <!-- Alternative Contact Methods -->
+          <div class="contact-info" role="complementary" aria-label="Contact information">
+            <div class="contact-methods">
+              <h3 class="contact-methods-title">Other Ways to Reach Us</h3>
 
-            <div class="contact-item">
-              <h3>Email</h3>
-              <p><a href="mailto:info@programmingschool.com">info@programmingschool.com</a></p>
-            </div>
+              <div class="contact-item" role="group" aria-labelledby="contact-email-heading">
+                <h4 id="contact-email-heading">Email</h4>
+                <p>
+                  <a href="mailto:info@programmingschool.com" aria-label="Email us at info@programmingschool.com">
+                    info@programmingschool.com
+                  </a>
+                </p>
+                <p class="contact-item-description">For general inquiries and course information</p>
+              </div>
 
-            <div class="contact-item">
-              <h3>Phone</h3>
-              <p><a href="tel:+14155551234">+1 (415) 555-1234</a></p>
-            </div>
+              <div class="contact-item" role="group" aria-labelledby="contact-phone-heading">
+                <h4 id="contact-phone-heading">Phone</h4>
+                <p>
+                  <a href="tel:+14155551234" aria-label="Call us at +1 (415) 555-1234">
+                    +1 (415) 555-1234
+                  </a>
+                </p>
+                <p class="contact-item-description">Monday - Friday: 9:00 AM - 6:00 PM (PST)</p>
+              </div>
 
-            <div class="contact-item">
-              <h3>Hours</h3>
-              <p>Monday - Friday: 9:00 AM - 6:00 PM<br>Saturday: 10:00 AM - 4:00 PM<br>Sunday: Closed</p>
+              <div class="contact-item" role="group" aria-labelledby="contact-address-heading">
+                <h4 id="contact-address-heading">Visit Us</h4>
+                <address>
+                  123 Tech Street<br>
+                  San Francisco, CA 94105<br>
+                  United States
+                </address>
+                <p class="contact-item-description">Office hours: Monday - Saturday</p>
+              </div>
+
+              <!-- Social Media Links -->
+              <div class="contact-item contact-social" role="group" aria-labelledby="contact-social-heading">
+                <h4 id="contact-social-heading">Connect on Social Media</h4>
+                <ul class="social-links-list" role="list">
+                  <li>
+                    <a href="https://twitter.com/programmingschool" aria-label="Follow us on Twitter" rel="noopener noreferrer" target="_blank">
+                      <span class="social-icon" aria-hidden="true">🐦</span>
+                      Twitter
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://linkedin.com/company/programmingschool" aria-label="Connect with us on LinkedIn" rel="noopener noreferrer" target="_blank">
+                      <span class="social-icon" aria-hidden="true">💼</span>
+                      LinkedIn
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://facebook.com/programmingschool" aria-label="Like us on Facebook" rel="noopener noreferrer" target="_blank">
+                      <span class="social-icon" aria-hidden="true">📘</span>
+                      Facebook
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://instagram.com/programmingschool" aria-label="Follow us on Instagram" rel="noopener noreferrer" target="_blank">
+                      <span class="social-icon" aria-hidden="true">📷</span>
+                      Instagram
+                    </a>
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
 
-          <div class="contact-form">
-            <form method="POST" action="/submit-inquiry" novalidate>
-              <fieldset>
-                <legend class="sr-only">Contact Form</legend>
+          <!-- Contact Form with Accessibility Features -->
+          <div class="contact-form" role="region" aria-labelledby="contact-form-heading">
+            <h3 id="contact-form-heading" class="sr-only">Contact Form</h3>
 
+            <form
+              id="contact-form"
+              method="POST"
+              action="/submit-inquiry"
+              novalidate
+              aria-live="polite"
+            >
+              <fieldset>
+                <legend>Send Us a Message</legend>
+
+                <!-- Full Name Field -->
                 <div class="form-group">
-                  <label for="name">Full Name <span aria-label="required">*</span></label>
+                  <label for="name">
+                    Full Name
+                    <span class="required-indicator" aria-label="required">*</span>
+                  </label>
                   <input
                     type="text"
                     id="name"
                     name="name"
                     required
                     aria-required="true"
+                    aria-invalid="false"
+                    aria-describedby="name-error name-hint"
                     autocomplete="name"
+                    minlength="2"
+                    maxlength="100"
                   >
+                  <span id="name-hint" class="form-hint">Please enter your full name</span>
+                  <span id="name-error" class="form-error" role="alert" aria-live="assertive"></span>
                 </div>
 
+                <!-- Email Field -->
                 <div class="form-group">
-                  <label for="email">Email Address <span aria-label="required">*</span></label>
+                  <label for="email">
+                    Email Address
+                    <span class="required-indicator" aria-label="required">*</span>
+                  </label>
                   <input
                     type="email"
                     id="email"
                     name="email"
                     required
                     aria-required="true"
+                    aria-invalid="false"
+                    aria-describedby="email-error email-hint"
                     autocomplete="email"
+                    inputmode="email"
+                    pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
                   >
+                  <span id="email-hint" class="form-hint">We'll never share your email with anyone</span>
+                  <span id="email-error" class="form-error" role="alert" aria-live="assertive"></span>
                 </div>
 
+                <!-- Phone Field -->
                 <div class="form-group">
-                  <label for="phone">Phone Number</label>
+                  <label for="phone">
+                    Phone Number
+                  </label>
                   <input
                     type="tel"
                     id="phone"
                     name="phone"
+                    aria-invalid="false"
+                    aria-describedby="phone-error phone-hint"
                     autocomplete="tel"
+                    inputmode="tel"
+                    pattern="[0-9\s\-\+\(\)]{10,20}"
                   >
+                  <span id="phone-hint" class="form-hint">Optional - Include country code if outside US</span>
+                  <span id="phone-error" class="form-error" role="alert" aria-live="assertive"></span>
                 </div>
 
+                <!-- Course of Interest Field -->
                 <div class="form-group">
-                  <label for="course">Course of Interest</label>
-                  <select id="course" name="course">
-                    <option value="">Select a course</option>
+                  <label for="course">
+                    Course of Interest
+                  </label>
+                  <select
+                    id="course"
+                    name="course"
+                    aria-describedby="course-hint"
+                    aria-invalid="false"
+                  >
+                    <option value="">Select a course (optional)</option>
                     <option value="web-dev">Web Development Fundamentals</option>
                     <option value="javascript">Advanced JavaScript</option>
                     <option value="python">Python Programming</option>
                     <option value="fullstack">Full Stack Development</option>
                   </select>
+                  <span id="course-hint" class="form-hint">Let us know which course interests you</span>
                 </div>
 
+                <!-- Message Field -->
                 <div class="form-group">
-                  <label for="message">Message <span aria-label="required">*</span></label>
+                  <label for="message">
+                    Message
+                    <span class="required-indicator" aria-label="required">*</span>
+                  </label>
                   <textarea
                     id="message"
                     name="message"
                     rows="5"
                     required
                     aria-required="true"
+                    aria-invalid="false"
+                    aria-describedby="message-error message-hint message-counter"
+                    minlength="10"
+                    maxlength="1000"
                   ></textarea>
+                  <div class="form-footer">
+                    <span id="message-hint" class="form-hint">Tell us about your programming goals and questions</span>
+                    <span id="message-counter" class="form-counter" aria-live="polite">0 / 1000 characters</span>
+                  </div>
+                  <span id="message-error" class="form-error" role="alert" aria-live="assertive"></span>
                 </div>
 
-                <button type="submit" class="btn btn-primary">Send Message</button>
+                <!-- Honeypot Field for Spam Protection (hidden from real users) -->
+                <div class="form-group form-honeypot" aria-hidden="true">
+                  <label for="website">Website</label>
+                  <input
+                    type="text"
+                    id="website"
+                    name="website"
+                    tabindex="-1"
+                    autocomplete="off"
+                  >
+                </div>
+
+                <!-- Form Status Message -->
+                <div
+                  id="form-status"
+                  class="form-status"
+                  role="status"
+                  aria-live="polite"
+                  aria-atomic="true"
+                ></div>
+
+                <!-- Submit Button with Loading State -->
+                <button
+                  type="submit"
+                  class="btn btn-primary btn-submit"
+                  aria-busy="false"
+                  aria-live="polite"
+                >
+                  <span class="btn-text">Send Message</span>
+                  <span class="btn-loading" aria-hidden="true"></span>
+                </button>
               </fieldset>
             </form>
           </div>

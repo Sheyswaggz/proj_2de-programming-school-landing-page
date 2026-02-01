@@ -1,8 +1,9 @@
 /**
  * animations.js
  * Hero Section Kinetic Typography and Interactive Animations
+ * Course Card Scroll-Triggered Animations with Skeleton Loading
  *
- * @generated-from: task-id:721ef4a4-f989-4f73-bc83-252d811e4f41
+ * @generated-from: task-id:485612ec-4e8f-41f9-be88-82621f666ff3
  * @modifies: index.html
  * @dependencies: ["styles/animations.css"]
  */
@@ -26,6 +27,12 @@
     button: {
       loadingDuration: 2000,
       successDuration: 1500
+    },
+    courses: {
+      staggerMin: prefersReducedMotion ? 0 : 100,
+      staggerMax: prefersReducedMotion ? 0 : 150,
+      skeletonDuration: prefersReducedMotion ? 0 : 1200,
+      observerThreshold: 0.1
     }
   };
 
@@ -508,15 +515,147 @@
         });
       }, options);
 
-      // Observe elements that should reveal on scroll
+      // Observe elements that should reveal on scroll (excluding course cards)
       const revealElements = document.querySelectorAll(
-        '.course-card, .testimonial-card, .about-content, .section-header'
+        '.testimonial-card, .about-content, .section-header'
       );
 
       revealElements.forEach(element => {
         element.style.opacity = '0';
         element.style.transform = 'translateY(30px)';
         this.observer.observe(element);
+      });
+    }
+  }
+
+  /**
+   * Course Card Animator
+   * Manages scroll-triggered animations and skeleton loading for course cards
+   */
+  class CourseCardAnimator {
+    constructor() {
+      this.observer = null;
+      this.cards = [];
+      this.skeletonStates = new Map();
+    }
+
+    init() {
+      // Find all course cards
+      const courseCards = document.querySelectorAll('.course-card');
+      if (courseCards.length === 0) {
+        return;
+      }
+
+      this.cards = Array.from(courseCards);
+
+      // Initialize skeleton loading states
+      this.initializeSkeletonStates();
+
+      // Set up Intersection Observer for scroll-triggered animations
+      this.setupIntersectionObserver();
+    }
+
+    initializeSkeletonStates() {
+      this.cards.forEach((card, index) => {
+        // Add skeleton loading class
+        card.classList.add('course-card-skeleton');
+
+        // Store initial state
+        this.skeletonStates.set(card, {
+          isLoaded: false,
+          index: index
+        });
+
+        // Set initial hidden state
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(30px)';
+        card.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
+      });
+    }
+
+    setupIntersectionObserver() {
+      if (prefersReducedMotion) {
+        // Remove skeleton and show cards immediately if reduced motion is preferred
+        this.cards.forEach(card => {
+          card.classList.remove('course-card-skeleton');
+          card.style.opacity = '1';
+          card.style.transform = 'translateY(0)';
+        });
+        return;
+      }
+
+      const options = {
+        root: null,
+        rootMargin: '0px',
+        threshold: CONFIG.courses.observerThreshold
+      };
+
+      this.observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            this.animateCard(entry.target);
+            this.observer.unobserve(entry.target);
+          }
+        });
+      }, options);
+
+      // Observe all course cards
+      this.cards.forEach(card => {
+        this.observer.observe(card);
+      });
+    }
+
+    animateCard(card) {
+      const state = this.skeletonStates.get(card);
+      if (!state || state.isLoaded) {
+        return;
+      }
+
+      // Calculate staggered delay based on card index
+      const staggerDelay = this.calculateStaggerDelay(state.index);
+
+      // Simulate loading with skeleton state
+      setTimeout(() => {
+        this.removeSkeletonState(card, state, staggerDelay);
+      }, CONFIG.courses.skeletonDuration);
+    }
+
+    calculateStaggerDelay(index) {
+      // Generate random delay between staggerMin and staggerMax
+      const range = CONFIG.courses.staggerMax - CONFIG.courses.staggerMin;
+      const randomOffset = Math.random() * range;
+      return CONFIG.courses.staggerMin + randomOffset + (index * 50);
+    }
+
+    removeSkeletonState(card, state, staggerDelay) {
+      // Remove skeleton class
+      card.classList.remove('course-card-skeleton');
+
+      // Mark as loaded
+      state.isLoaded = true;
+
+      // Trigger reveal animation with stagger
+      setTimeout(() => {
+        card.style.opacity = '1';
+        card.style.transform = 'translateY(0)';
+        card.classList.add('reveal');
+      }, staggerDelay);
+    }
+
+    reset() {
+      // Reset all cards to initial state (useful for testing)
+      this.cards.forEach(card => {
+        const state = this.skeletonStates.get(card);
+        if (state) {
+          state.isLoaded = false;
+          card.classList.add('course-card-skeleton');
+          card.classList.remove('reveal');
+          card.style.opacity = '0';
+          card.style.transform = 'translateY(30px)';
+          if (this.observer) {
+            this.observer.observe(card);
+          }
+        }
       });
     }
   }
@@ -554,6 +693,10 @@
     const scrollReveal = new ScrollReveal();
     scrollReveal.init();
 
+    // Initialize course card animator
+    const courseCardAnimator = new CourseCardAnimator();
+    courseCardAnimator.init();
+
     // Log initialization (can be removed in production)
     console.log('Animations initialized', {
       prefersReducedMotion,
@@ -562,7 +705,8 @@
         smoothScroll: true,
         buttonStates: true,
         scrollIndicator: true,
-        scrollReveal: !prefersReducedMotion
+        scrollReveal: !prefersReducedMotion,
+        courseCardAnimations: true
       }
     });
   }
@@ -577,7 +721,8 @@
       SmoothScroll,
       ButtonStateManager,
       ScrollIndicator,
-      ScrollReveal
+      ScrollReveal,
+      CourseCardAnimator
     };
   }
 
